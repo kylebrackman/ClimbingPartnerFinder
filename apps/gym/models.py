@@ -11,3 +11,13 @@ class Gym(models.Model):
     def __str__(self):
         return self.name
     
+    class Style(models.Model):
+        name = models.CharField(max_length=100)
+        slug = models.SlugField(max_length=100, unique=True)
+        description = models.TextField(blank=True, null=True)
+        price = models.FloatField()
+    
+        def __str__(self):
+            return self.name
+    
+    # Possibly create "owner" model, create foreign keys accordingly
