@@ -1,8 +1,15 @@
 from django.shortcuts import render
 
+from apps.gym.models import Gym
+
 # Create your views here.
 def frontpage(request):
-    return render(request, 'frontpage.html')
+    gyms = Gym.objects.all()
+    
+    context = {
+        'gyms': gyms
+    }
+    return render(request, 'frontpage.html', context)
 
 
 def contact(request):

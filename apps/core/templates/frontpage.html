@@ -1,12 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Welcome to Climbing Partner Finder</h1>
-                <p>Find climbing partners in your area.</p>
+
+    <div class="columns is-multiline">
+        {% for gym in gyms %}
+            <div class="column is-3">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media-content">
+                            <p class="title is-4">
+                                {{ gym.name }}
+                            </p>
+                        </div>
+                    </div>
+                    <footer class="card-footer-item">
+                        <a>View</a>
+                    </footer>
+                </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
+    <h1>Welcome to Climbing Partner Finder</h1>
 {% endblock %} 
