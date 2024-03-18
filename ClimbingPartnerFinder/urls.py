@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 
 from apps.core.views import frontpage, contact
+from apps.gym.views import gym_detail
 
 urlpatterns = [
     path('', frontpage, name='frontpage'),
     path('admin/', admin.site.urls),
     path('contact/', contact, name='contact'),
+    path('<slug:slug>/', gym_detail, name='gym_detail')
 ]
