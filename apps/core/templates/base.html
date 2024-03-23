@@ -21,7 +21,6 @@
 
 			<div id="main-navbar" class="navbar-menu">
 				<div class="navbar-end">
-					<a href="{% url 'contact' %}" class="navbar-item">Contact</a>
 					{% for gym in gyms %}
 						<a href="{% url 'gym_detail' gym.slug %}" class="navbar-item">{{ gym.name }}</a>
 					{% endfor %}
@@ -33,5 +32,17 @@
 			{% block content %}
             {% endblock %}
 		</section>
+
+		<footer class="footer">
+			<div class="columns">
+				<div class="column is-4">
+					<h2 class="subtitle">Partner Finder</h2>
+				</div>
+				<div>
+					<a href="{% url 'contact' %}" class="navbar-item">Contact</a>
+					<a href="{% url 'about' %}" class="navbar-item">About</a>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>

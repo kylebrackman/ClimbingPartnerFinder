@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from apps.core.views import frontpage, contact
+from apps.core.views import frontpage, contact, about
 from apps.gym.views import gym_detail
 
 urlpatterns = [
     path('', frontpage, name='frontpage'),
     path('admin/', admin.site.urls),
+    path('about/', about, name='about'),
     path('contact/', contact, name='contact'),
     path('<slug:slug>/', gym_detail, name='gym_detail')
 ]
