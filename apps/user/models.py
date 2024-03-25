@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser, PermissionsMixin, UserManag
 # AbstractUser and PermissionsMixin provide the core implementation of a user model, including hashed passwords, tokenized password resets, and permission management 
 from django.db import models
 from django.utils import timezone
+from django.apps import AppConfig
 
 class CustomUserManager(UserManager):
     
@@ -47,7 +48,7 @@ class User(AbstractUser, PermissionsMixin):
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
-    
+
     objects = CustomUserManager()
     
     USERNAME_FIELD = 'email'
@@ -60,3 +61,6 @@ class User(AbstractUser, PermissionsMixin):
     
     def get_full_name(self):
         return self.name or self.email.split('@')[0]
+    
+    class UserConfig(AppConfig):
+        name = 'apps.user'
