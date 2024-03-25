@@ -1,5 +1,6 @@
 from typing import Any
 from django.contrib.auth.models import AbstractUser, PermissionsMixin, UserManager
+# AbstractUser and PermissionsMixin provide the core implementation of a user model, including hashed passwords, tokenized password resets, and permission management 
 from django.db import models
 from django.utils import timezone
 
@@ -30,6 +31,12 @@ class CustomUserManager(UserManager):
 class User(AbstractUser, PermissionsMixin):
     name = models.CharField(max_length=100, blank=True, default='')
     email = models.EmailField(blank=True, default='', unique=True)
+    climbing_styles = []
+    ticks = []
+    mountain_project_profile = models.URLField(blank=True, default='')
+    eight_a_profile = models.URLField(blank=True, default='')
+    times_available = []
+    goal_grade = models.CharField(max_length=10, blank=True, default='')
     
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
