@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a >
-    <img src="images/favicon.ico" alt="RentAll logo" width="80" height="80">
+    <!-- <img src="" alt="Climbing Partner Finder logo" width="80" height="80"> -->
   </a>
 
   <h1 align="center">Climbing Partner Finder</h1>
