@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View, Platform, ScrollView, TextInput, Button, TouchableOpacity } from 'react-native';
-import { NativeWindStyleSheet } from 'nativewind';
 import { useState } from 'react';
 
 export default function App() {
@@ -8,7 +7,7 @@ export default function App() {
   const [text, setText] = useState("")
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={ s `bg-white pt-5`}>
       <View >
         <Text>Hello World!</Text>
         <Text>Platform: {Platform.OS == 'ios' ? 'ios' : 'android'} </Text>
@@ -32,15 +31,6 @@ export default function App() {
   );
 }
 
-// NativeWindStyleSheet.create({
-//   container: 'flex bg-white items-center justify-center',
-//   text: 'text-center',
-//   input: 'border border-black p-2',
-//   button: 'bg-blue-500 p-2 text-white',
-//   buttonText: 'text-white',
-//   touchable: 'bg-green-500 p-2',
-// });
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -58,6 +48,6 @@ const styles = StyleSheet.create({
     color: 'white',
     padding: 10,
     borderColor: 'white',
-    backgroundColor: 'green' 
+    backgroundColor: 'green'
   },
 });
