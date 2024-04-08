@@ -51,7 +51,7 @@ This app is designed to help climbers find partners to consistently climb with. 
 - Python
 - Django
 - React Native
-- NativeWind
+- NativeWind (in progress)
 - sqlite (Pending move to Postgresql)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
